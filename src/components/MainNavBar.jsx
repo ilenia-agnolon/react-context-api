@@ -28,7 +28,7 @@ const MainNavBar = () => {
             className="budget-mode-btn"
             onClick={() => setBudgetMode(!budgetMode)}
           >
-            {budgetMode ? "show all products" : "show under $30 only"}
+            {budgetMode ? "budget mode off" : "budget mode on"}
           </button>
         </ul>
       </nav>
