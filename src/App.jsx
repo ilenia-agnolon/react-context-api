@@ -1,4 +1,5 @@
 import "./App.css";
+import { BudgetProvider } from "./contexts/BudgetContext";
 
 //import della libreria di routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,16 +14,18 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <MainNavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/who-we-are" element={<ChiSiamo />} />
-          <Route path="/products" element={<Prodotti />} />
-          {/* NUOVA ROTTA PER React Router Store */}
-          <Route path="/products/:id" element={<ProductDetailPage />} />
-        </Routes>
-      </BrowserRouter>
+      <BudgetProvider>
+        <BrowserRouter>
+          <MainNavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/who-we-are" element={<ChiSiamo />} />
+            <Route path="/products" element={<Prodotti />} />
+            {/* NUOVA ROTTA PER React Router Store */}
+            <Route path="/products/:id" element={<ProductDetailPage />} />
+          </Routes>
+        </BrowserRouter>
+      </BudgetProvider>
     </>
   );
 }
