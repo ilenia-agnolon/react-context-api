@@ -138,11 +138,13 @@ nav li:hover {
   text-align: center;
   display: inline-block;
   width: 140px;
-  background-color: #7d7b77;
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.1),
     0 0 12px rgba(255, 255, 255, 0.2);
-  color: whitesmoke;
+  color: #7d7b77;
   border: transparent;
+  width: 160px;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
 
 .budget-mode-btn:hover {
