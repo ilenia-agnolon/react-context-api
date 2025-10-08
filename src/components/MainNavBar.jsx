@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { BudgetContext } from "../contexts/BudgetContext";
 
 //dati menù
 const links = [
@@ -8,6 +10,8 @@ const links = [
 ];
 
 const MainNavBar = () => {
+  const { budgetMode, setBudgetMode } = useContext(BudgetContext);
+
   return (
     <header>
       <nav>
@@ -19,13 +23,13 @@ const MainNavBar = () => {
               </NavLink>
             </li>
           ))}
-          {/* <li>
-          <Link to="/">Home Page</Link>
-          <NavLink to="/chi-siamo">Chi Siamo</NavLink>
-          <NavLink to="/prodotti">Prodotti</NavLink>
-        </li> */}
-
-          <button className="budget-mode-btn">Budget mode</button>
+          {/* bottone*/}
+          <button
+            className="budget-mode-btn"
+            onClick={() => setBudgetMode(!budgetMode)}
+          >
+            {budgetMode ? "Budget Mode OFF" : "Budget Mode ON"}
+          </button>
         </ul>
       </nav>
     </header>
