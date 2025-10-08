@@ -24,6 +24,8 @@ const MainNavBar = () => {
           <NavLink to="/chi-siamo">Chi Siamo</NavLink>
           <NavLink to="/prodotti">Prodotti</NavLink>
         </li> */}
+
+          <button className="budget-mode-btn">Budget mode</button>
         </ul>
       </nav>
     </header>
