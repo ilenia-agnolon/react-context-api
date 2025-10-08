@@ -28,7 +28,7 @@ const MainNavBar = () => {
             className="budget-mode-btn"
             onClick={() => setBudgetMode(!budgetMode)}
           >
-            {budgetMode ? "budget mode off" : "budget mode on"}
+            {budgetMode ? "budget mode on" : "budget mode off"}
           </button>
         </ul>
       </nav>
