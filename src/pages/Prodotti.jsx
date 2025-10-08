@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { BudgetContext } from "../contexts/BudgetContext";
 
 const Prodotti = () => {
   const [prodotti, setProdotti] = useState([]);
+  const { budgetMode } = useContext(BudgetContext);
+  // console.log("Budget mode attivo:", budgetMode);
 
   //   AXIOS
   useEffect(() => {
