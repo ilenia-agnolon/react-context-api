@@ -20,17 +20,21 @@ const Prodotti = () => {
       });
   }, []);
 
+  //BUDGET MODE
+  const productsAt30OrLower = budgetMode
+    ? prodotti.filter((prodotto) => prodotto.price <= 30)
+    : prodotti;
+
   //   LISTA PRODOTTI
   return (
     <>
       <div className="main-container-products">
-        <h2>Products</h2>
+        <h2>{budgetMode ? "Products under $30" : "All products"}</h2>
 
-        {/* contenitore  */}
         <div className="container">
           <div className="row">
             {/* - MAP PRODOTTO - */}
-            {prodotti.map((prodotto) => (
+            {productsAt30OrLower.map((prodotto) => (
               <div className="product-card" key={prodotto.id}>
                 {/* --LINK TO-- */}
                 <Link to={`/products/${prodotto.id}`}>
